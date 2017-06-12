@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# We will be using the Devise Gem for user authentication 
+gem 'devise'
 # For Twitter UI components including NavBar
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -43,6 +45,6 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # gem 'spring'
 end
 
