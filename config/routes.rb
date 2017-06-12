@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Define routes for pages
   get '/home' => 'pages#home' # Overwrite default routes
 
-  get '/profile' => 'pages#profile' # Overwrite default routes
+  get '/user/:id' => 'pages#profile' # Overwrite default routes
 
   get '/explore' => 'pages#explore' # Overwrite default routes
 
