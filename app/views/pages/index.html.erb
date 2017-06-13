@@ -1,2 +1,82 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<!--If the user is not signed in render this -->
+
+<% if !user_signed_in? %>
+
+    <!-- Not Signed In -->
+    <style>
+        body {
+            /*Transparent film on BG to appear darker*/
+            background: linear-gradient( 
+                rgba(0,0,0, 0.3),
+                rgba(0,0,0, 0.3)
+            ), url("/squamish.jpg") no-repeat center center fixed;
+            
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+        h1 {
+            color: white;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .container-index {
+            margin-right: 15%;
+            margin-left: 15%;
+        }
+        
+        .text {
+            color: white;
+            font-size: 150%;
+        }
+        
+        .footer-links {
+            text-align: center;
+            color: white;
+            margin-top: 20%;
+            font-size: 90%;
+        }
+        
+        .log-in {
+            float: right;
+            height: 100px;
+            width: 300px;
+            margin-top: 10%;
+        }
+        .sign-up {
+            float: right;
+            height: 200px;
+            width: 300px;
+        }
+    </style>
+    
+    <div class="container-index row">
+        <div class="col-sm-6">
+             <h1>Welcome to Hootie!</h1>
+            <p class="text">See what's happening in the world right now. From breaking news and entertainment to sports and politics, get the full story with all the live commentary.</p>
+        </div>
+        
+       <div class="col-sm-6">
+             <div class="log-in panel">
+                    Log In
+             </div>
+             <div class="sign-up panel">
+                    Sign Up
+             </div>
+       </div>
+       
+       <div class="col-sm-12">
+          <p class="footer-links">About  Help  Blog  Status  Terms  Privacy  Brand  Advertise  Businesses  Media  Developers  Directory  © 2017 Hootie</p>
+       </div>
+
+    </div>
+    
+<% else %>
+    
+    <!-- Signed in -->
+    
+    
+<% end %>
