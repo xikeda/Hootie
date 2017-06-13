@@ -19,10 +19,44 @@
 body{
     background-color: rgba(212,216,212, 0.2);
 }
+.rounded-img {
+    border-radius: 5%;
+}
 .navbar {
     background-color: white;
 }
 .navbar-brand {
     position: absolute;
     left: 50%;
+    margin-right: 25px !important;
+    display: block;
+}
+.post-panel {
+    margin-top: -21px;
+}
+.post-title {
+    text-align: left;
+    margin-left: 15px;
+}
+.post-content {
+    text-align: left;
+    margin-left: 15px;
+}
+.post-links {
+    text-align: left;
+}
+.post-owner {
+    color: black;
+    font-weight: bold;
+}
+.post-creation {
+    opacity: 0.65;
+}
+.post-form-panel {
+    margin-bottom: -21px;
+}
+.g-links {
+    margin-right: 75px;
+    opacity: 0.4;
+    font-size: 120%;
 }

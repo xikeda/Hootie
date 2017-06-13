@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   #back-end code for pages/index
   def home
     @posts = Post.all
+    @newpost = Post.new
   end
 
   #back-end code for pages/index
