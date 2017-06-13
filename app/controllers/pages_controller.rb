@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   #back-end code for pages/index
   def home
+    @posts = Post.all
   end
 
   #back-end code for pages/index
@@ -18,9 +19,13 @@ class PagesController < ApplicationController
       # Redirect to 404 error for now
       redirect_to root_path, :notice => "User not found!"
     end
+    
+    @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
+    @newpost = Post.new
   end
 
   #back-end code for pages/index
   def explore
+    @posts = Post.all
   end
 end

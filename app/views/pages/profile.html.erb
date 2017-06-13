@@ -15,11 +15,16 @@
         </div>
     </div>
     <div class="col-xs-6">
+      
+    <%= render '/components/post_form' %>
+    
+    <% for @p in @posts %>
           <div class="panel panel-default">
           <div class="panel-body">
-            Tweets
+            <p><%= @p.content %></p>
           </div>
         </div>
+     <% end %>
     </div>
     <div class="col-xs-3">
           <div class="panel panel-default">
@@ -27,12 +32,7 @@
             Who to Follow
           </div>
         </div>
-    </div>
-</div>
-<!-- Begin Row 2-->
-<div class="row">
-    <div class="col-xs-3 col-xs-offset-9">
-          <div class="panel panel-default">
+        <div class="panel panel-default">
           <div class="panel-body">
             Trends
           </div>
