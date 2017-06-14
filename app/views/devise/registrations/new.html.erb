@@ -1,34 +1,57 @@
-<h2>Sign up</h2>
+<style>
+  body {
+            /*Transparent film on BG to appear darker*/
+            background: linear-gradient( 
+                rgba(0,0,0, 0.3),
+                rgba(0,0,0, 0.3)
+            ), url("/squamish.jpg") no-repeat center center fixed;
+            
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .enter {
+            height: 300px;
+            width: 300px;
+            border-radius: 2%;
+            text-align: center;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%) }
+        }
+</style>
+<div class="enter">
+<h2>Sign up for Hootie</h2><br>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-      <%= f.label :username %><br />
-      <%= f.text_field :username, autofocus: true %>
+      <%= f.text_field :username, autofocus: true, placeholder: "Full Name", :size => 35  %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+    <%= f.email_field :email, placeholder: "Email", :size => 35 %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password - 6 Characters Minimum", :size => 35 %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password", :size => 35 %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up for Hootie" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

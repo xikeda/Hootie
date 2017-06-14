@@ -30,7 +30,7 @@ class PagesController < ApplicationController
   #back-end code for pages/index
   def explore
     @posts = Post.all
-    @newPost = Post.new
-        @toFollow = User.all.last(5)
+    @newpost = Post.new
+    @toFollow = User.all.last(5)
   end
 end
