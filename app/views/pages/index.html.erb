@@ -23,6 +23,11 @@
             color: white;
         }
         
+        p {
+            color: dark grey;
+            font-weight: bold;
+        }
+        
         .container-index {
             margin-right: 15%;
             margin-left: 15%;
@@ -51,6 +56,10 @@
             height: 200px;
             width: 300px;
         }
+        .form-index {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
     </style>
     
     <div class="container-index row">
@@ -62,35 +71,28 @@
        <div class="col-sm-6">
              <div class="log-in panel">
                    <%= form_for(:user, :url => session_path(:user)) do |f| %>
-                      <%= f.text_field :email %>
-                      <%= f.password_field :password %>
-                      <%= f.check_box :remember_me %>
-                      <%= f.label :remember_me %>
-                      <%= f.submit 'Sign in' %>
-                      <%= link_to "Forgot your password?", new_password_path(:user) %>
+                      <div class="form-index" style="margin-top:10px;"><%= f.text_field :email, placeholder: "Username", :size => 38 %></div>
+                      <div class=" row form-index"><%= f.password_field :password, placeholder: "Password", :size => 29 %> <%= f.submit 'Sign in' %></div>
+                      <div class="row" style="font-size: 12px; margin-left: 10px; margin-right: 10px; margin-top: 10px;">
+                      <div class="col-sm-6" style="text-align: center; "><%= f.check_box :remember_me %><%= f.label :remember_me %></div>
+                      <div class="col-sm-6" style="text-align: center; "><%= link_to "Forgot password?", new_password_path(:user) %></div>
+                      </div>
                     <% end %>
              </div>
              <div class="sign-up panel">
-                     New to Hootie? Sign up
+                     <p style="text-align: center; margin-top: 10px;">New to Hootie? Sign up</p>
                      <%= form_for(:user, url: registration_path(:user)) do |f| %>
-                     <%= f.label :username %><br />
-                     <%= f.text_field :username, autofocus: true %>
-                   
-                     <%= f.label :email %><br />
-                     <%= f.email_field :email %>
-                  
-                      <%= f.label :password %>
-                      <% if @minimum_password_length %>
-                      <em>(<%= @minimum_password_length %> characters minimum)</em>
-                      <% end %><br />
-                      <%= f.password_field :password, autocomplete: "off" %> 
-                   
-                      <%= f.label :password_confirmation %><br />
-                      <%= f.password_field :password_confirmation, autocomplete: "off" %> 
-                   
-                      <%= f.submit "Sign up" %>
-  
-                      <% end %>﻿
+                     <div class="form-index"><%= f.text_field :username, autofocus: true, placeholder: "Full Name", :size => 38  %>
+                     <%= f.email_field :email , placeholder: "Email", :size => 38 %>
+                     <% if @minimum_password_length %>
+                     <em>(<%= @minimum_password_length %> characters minimum)</em>
+                     <% end %>
+                     <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :size => 38 %>
+                     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password", :size => 38 %></div>
+                     <div class="row" style="margin-right: 2px;">
+                         <div class="col-sm-12" style="margin-top: 10px; margin-bottom: 10px; text-align: right"><%= f.submit "Sign up for Hootie" %></div>
+                     </div>
+                     <% end %>﻿
              </div>
        </div>
        
