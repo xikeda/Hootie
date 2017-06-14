@@ -23,10 +23,14 @@ class PagesController < ApplicationController
     
     @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
     @newpost = Post.new
+    
+    @toFollow = User.all.last(5)
   end
 
   #back-end code for pages/index
   def explore
     @posts = Post.all
+    @newPost = Post.new
+        @toFollow = User.all.last(5)
   end
 end
